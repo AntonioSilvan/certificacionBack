@@ -17,6 +17,19 @@
         }else{
             $response=NoQuery();
         }
-        return $response;
+        return convertUtf8($response);
+    }
+
+    function preguntasUpdate($array){
+        if(count($array>0) && $array[0]['pre_contenido']!="" &&$array[0]['pre_id']>0){
+            $array[0]=$array;
+            $pre_id=$array['pre_id'];
+            $pre_contenido=$array['pre_contenido'];
+            $query="UPDATE Preguntas SET pre_contenido='$pre_contenido' WHERE pre_id=$pre_id";
+            $response=numQuery($query);    
+        }else{
+            $response=$NoQuery();
+        }
+        return convertUtf8($response);
     }
 ?>

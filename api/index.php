@@ -41,6 +41,8 @@
                     case "preguntasAdd":$response=preguntasAdd($arrayData);print_r(json_encode($response));break;
                     case "respuestasAdd":$response=respuestasAdd($arrayData);print_r(json_encode($response));break;
 
+                    case "preguntasUpdate":$response=preguntasUpdate($arrayData);print_r(json_encode($response));break;
+
                     case "administradoresLogin":$response=administradoresLogin($arrayData);print_r(json_encode($response));break;
                 }
             }else{
