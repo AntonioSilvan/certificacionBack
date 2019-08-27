@@ -1,7 +1,7 @@
 <?php
     $host="localhost";
     $dbName="certificacion";
-    $password="Admcs1234567";
+    $password="";
     $user="root";
 
     try{
