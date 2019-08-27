@@ -21,7 +21,7 @@
             $adm_correo=$array[0]['adm_correo'];
             $adm_password=$array[0]['adm_password'];
 
-            $query="INSERT INTO Administradores  VALUES (null, '$adm_nombre', '$adm_ap_paterno', '$adm_ap_materno', '$adm_correo', '$adm_password')";
+            $query="INSERT INTO Administradores  VALUES (null, '$adm_nombre', '$adm_ap_paterno', '$adm_ap_materno', '$adm_correo', '$adm_password', null)";
             $response=numQuery($query);
         }else{
             $response=NoQuery();

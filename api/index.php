@@ -2,6 +2,8 @@
     include_once 'utilities.php';
     include_once 'users.php';
     include_once 'preguntas.php';
+    include_once 'respuestas.php';
+    include_once 'ficha.php';
 
 
     if(isset($_GET['url'])){
@@ -15,9 +17,10 @@
                 case "administradores":$response=administradores();print_r(json_encode($response));break;
                 case "users":$response=users();print_r(json_encode($response));break;
                 case "preguntas":$response=preguntas();print_r(json_encode($response));break;
-                case "respuestas":$response=respuestas();print_r(json_decode($response));break;
+                case "respuestas":$response=respuestas();print_r(json_encode($response));break;
 
                 case "administradoresOne":$response=administradoresOne($_GET['adm_id']);print_r(json_encode($response));break;
+                case "fichas":$response=fichas($_GET['use_id']);print_r(json_encode($response));break;
     
             }
 //************************************************************************************************ */
