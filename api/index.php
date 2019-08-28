@@ -42,6 +42,10 @@
                     case "respuestasAdd":$response=respuestasAdd($arrayData);print_r(json_encode($response));break;
 
                     case "preguntasUpdate":$response=preguntasUpdate($arrayData);print_r(json_encode($response));break;
+                    case "respuestasUpdate":$response=respuestasUpdate($arrayData);print_r(json_encode($response));break;
+
+                    case "preguntasDelete":$response=preguntasDelete($arrayData);print_r(json_encode($response));break;
+                    case "respuestasDelete":$response=respuestasDelete($arrayData);print_r(json_encode($response));break;
 
                     case "administradoresLogin":$response=administradoresLogin($arrayData);print_r(json_encode($response));break;
                 }
