@@ -20,6 +20,7 @@
                 case "respuestas":$response=respuestas();print_r(json_encode($response));break;
 
                 case "administradoresOne":$response=administradoresOne($_GET['adm_id']);print_r(json_encode($response));break;
+                case "usersOne":$response=usersOne($_GET['use_id']);print_r(json_encode($response));break;
                 case "fichas":$response=fichas($_GET['use_id']);print_r(json_encode($response));break;
     
             }

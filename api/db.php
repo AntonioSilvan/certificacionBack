@@ -41,6 +41,21 @@
 
     }
 
+    //INSERTAR USUARIO
+    function insertUser($query, &$conn=null){
+        if(!$conn)global $conn;
+        $consulta=$conn->prepare($query);
+        $consulta->execute();
+        if($consulta->rowCount()>0){
+            $last_id=$conn->lastInsertId();
+            mkdir("../ficha/$last_id");
+            $result[]=['status'=>true];
+        }else{
+            $result[]=['status'=>false];
+        }
+        return $result;
+    }
+
     //RETURN FALSE
     function NoQuery(){
         $result[]=['status'=>false];
