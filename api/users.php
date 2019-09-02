@@ -13,6 +13,19 @@
          return convertUtf8($response);
      }
 
+     function usersLogin($array){
+        if(count($array)>0 && $array[0]['use_crreo']!=""&&$array[0]['use_password']!=""){
+            $array=$array[0];
+            $use_correo=$array['use_correo'];
+            $use_password=$array['use_password'];
+            $query="SELECT* FROM Users WHERE use_correo='$use_correo' AND use_password='$use_password'";
+            $response=getAll($query);
+        }else{
+            $response=NoQuery();
+        }
+        return convertUtf8($response);
+     }
+
      function UsersAdd($array){
          if(count($array)>0 && $array[0]['use_nombre']!="" && $array[0]['use_ap_paterno']!="" && $array[0]['use_ap_materno']!="" && $array[0]['use_curp']!=""
              && $array[0]['use_rfc']!="" && $array[0]['use_correo']!="" && $array[0]['use_password']!=""&&$array[0]['use_pais']!=""&&$array[0]['use_estado']!=""&&$array[0]['use_municipio']!=""
