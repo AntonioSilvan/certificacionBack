@@ -14,7 +14,7 @@
      }
 
      function usersLogin($array){
-        if(count($array)>0 && $array[0]['use_crreo']!=""&&$array[0]['use_password']!=""){
+        if(count($array)>0 && $array[0]['use_correo']!=""&&$array[0]['use_password']!=""){
             $array=$array[0];
             $use_correo=$array['use_correo'];
             $use_password=$array['use_password'];
