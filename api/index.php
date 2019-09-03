@@ -50,6 +50,8 @@
 
                     case "administradoresLogin":$response=administradoresLogin($arrayData);print_r(json_encode($response));break;
                     case "usersLogin":$response=usersLogin($arrayData);print_r(json_encode($response));break;
+
+                    case "respuestasPreg":$response=respuestasPreg($arrayData);print_r(json_encode($response));break;
                 }
             }else{
 
