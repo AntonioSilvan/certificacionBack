@@ -54,7 +54,14 @@
                     case "respuestasPreg":$response=respuestasPreg($arrayData);print_r(json_encode($response));break;
                 }
             }else{
-
+                switch($request){
+                case "fichasAdd":
+                $fk_use_id=$_POST['fk_use_id'];
+                $img_ficha=$_FILES['img_ficha'];
+                $response=fichasAdd($fk_use_id,$img_ficha);
+                print_r(json_encode($response));break;
+                break;
+                }
             }
 //******************************************************************************************************* */
         

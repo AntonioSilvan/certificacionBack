@@ -56,6 +56,25 @@
         return $result;
     }
 
+    function insertFicha($query, $uploadRuta, $extencion, $tmp_name, &$conn=null){
+        if(!$conn)global $conn;
+        $consulta=$conn->prepare($query);
+        $consulta->execute();
+        if($consulta->rowCount()>0){
+           
+            $last_id=$conn->lastInsertId();
+            $queryUpdate="UPDATE Ficha SET fic_ruta='$uploadRuta$last_id.$extencion' WHERE fic_id=$last_id";
+            $consultaUpdate=$conn->prepare($queryUpdate);
+            $consultaUpdate->execute();
+            move_uploaded_file($tmp_name, $uploadRuta."$last_id.$extencion");
+            //mkdir("../ficha/$last_id");
+            $result[]=['status'=>true];
+        }else{
+            $result[]=['status'=>false];
+        }
+        return $result;
+    }
+
     //RETURN FALSE
     function NoQuery(){
         $result[]=['status'=>false];
