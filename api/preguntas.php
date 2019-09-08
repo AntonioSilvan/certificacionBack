@@ -12,7 +12,8 @@
         if(count($array>0) && $array[0]['pre_contenido']!=""){
             $array=$array[0];
             $pre_contenido=$array['pre_contenido'];
-            $query="INSERT INTO Preguntas VALUES (null,'$pre_contenido',null, null, 1)";
+            $fk_adm_id=$array['fk_adm_id'];
+            $query="INSERT INTO Preguntas VALUES (null,'$pre_contenido',null, 1, $fk_adm_id)";
             $response=numQuery($query);
         }else{
             $response=NoQuery();

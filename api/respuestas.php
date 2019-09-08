@@ -13,8 +13,8 @@
             $res_contenido=$array['res_contenido'];
             $res_correcta=$array['res_correcta'];
             $fk_pre_id=$array['fk_pre_id'];
-            //$fk_adm_id=$array['fk_adm_id'];
-            $query="INSERT INTO Respuestas VALUES(null, '$res_contenido', $res_correcta,null,null, $fk_pre_id, 1)";
+            $fk_adm_id=$array['fk_adm_id'];
+            $query="INSERT INTO Respuestas VALUES(null, '$res_contenido', $res_correcta,null,1, $fk_pre_id, $fk_adm_id)";
             $response=numQuery($query);
         }else{
             $response=NoQuery();
@@ -48,7 +48,7 @@
     }
 
     function respuestasPreg($array){
-        if(count($array)>0 && $array[0]['pre_id']>0 && $array[0]['fk_adm_id']>0){
+        if(count($array)>0 && $array[0]['fk_pre_id']>0 && $array[0]['fk_adm_id']>0){
             $array=$array[0];
             $fk_pre_id=$array['fk_pre_id'];
             $fk_adm_id=$array['fk_adm_id'];

@@ -4,6 +4,8 @@
     include_once 'preguntas.php';
     include_once 'respuestas.php';
     include_once 'ficha.php';
+    include_once 'examenes.php';
+    include_once 'examen_preguntas.php';
 
 
     if(isset($_GET['url'])){
@@ -18,6 +20,7 @@
                 case "users":$response=users();print_r(json_encode($response));break;
                 case "preguntas":$response=preguntas();print_r(json_encode($response));break;
                 case "respuestas":$response=respuestas();print_r(json_encode($response));break;
+                case "examenes":$response=examenes();print_r(json_encode($response));break;
 
                 case "administradoresOne":$response=administradoresOne($_GET['adm_id']);print_r(json_encode($response));break;
                 case "usersOne":$response=usersOne($_GET['use_id']);print_r(json_encode($response));break;
@@ -41,6 +44,8 @@
                     case "usersAdd":$response=usersAdd($arrayData);print_r(json_encode($response));break;
                     case "preguntasAdd":$response=preguntasAdd($arrayData);print_r(json_encode($response));break;
                     case "respuestasAdd":$response=respuestasAdd($arrayData);print_r(json_encode($response));break;
+                    case "examenesAdd":$response=examenesAdd($arrayData);print_r(json_encode($response));break;
+                    case "examen_preguntasAdd":$response=examen_preguntasAdd($arrayData);print_r(json_encode($response));break;
 
                     case "preguntasUpdate":$response=preguntasUpdate($arrayData);print_r(json_encode($response));break;
                     case "respuestasUpdate":$response=respuestasUpdate($arrayData);print_r(json_encode($response));break;
@@ -52,15 +57,17 @@
                     case "usersLogin":$response=usersLogin($arrayData);print_r(json_encode($response));break;
 
                     case "respuestasPreg":$response=respuestasPreg($arrayData);print_r(json_encode($response));break;
+
+                    case "examenesOne":$response=examenesOne($arrayData);print_r(json_encode($response));break;
                 }
             }else{
                 switch($request){
-                case "fichasAdd":
-                $fk_use_id=$_POST['fk_use_id'];
-                $img_ficha=$_FILES['img_ficha'];
-                $response=fichasAdd($fk_use_id,$img_ficha);
-                print_r(json_encode($response));break;
-                break;
+                    case "fichasAdd":
+                        $fk_use_id=$_POST['fk_use_id'];
+                        $img_ficha=$_FILES['img_ficha'];
+                        $response=fichasAdd($fk_use_id,$img_ficha);
+                        print_r(json_encode($response));break;
+                    break;
                 }
             }
 //******************************************************************************************************* */
