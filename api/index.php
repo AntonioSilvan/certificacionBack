@@ -54,6 +54,7 @@
 
                     case "preguntasDelete":$response=preguntasDelete($arrayData);print_r(json_encode($response));break;
                     case "respuestasDelete":$response=respuestasDelete($arrayData);print_r(json_encode($response));break;
+                    case "usersDelete":$response=usersDelete($arrayData);print_r(json_encode($response));break;
 
                     case "administradoresLogin":$response=administradoresLogin($arrayData);print_r(json_encode($response));break;
                     case "usersLogin":$response=usersLogin($arrayData);print_r(json_encode($response));break;

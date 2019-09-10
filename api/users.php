@@ -53,4 +53,15 @@
          }
          return convertUtf8($response);
      }
+
+     function usersDelete($array){
+        if(count($array)>0 && $array[0]['use_id']>0){
+            $use_id=$array[0]['use_id'];
+            $query="DELETE FROM Users WHERE use_id=$use_id";
+            $response=numQuery($query);
+        }else{
+            $response=NoQuery();
+        }
+        return convertUtf8($response);
+     }
 ?>
