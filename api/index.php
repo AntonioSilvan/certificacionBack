@@ -6,6 +6,7 @@
     include_once 'ficha.php';
     include_once 'examenes.php';
     include_once 'examen_preguntas.php';
+    include_once 'asignados.php';
 
 
     if(isset($_GET['url'])){
@@ -46,6 +47,7 @@
                     case "respuestasAdd":$response=respuestasAdd($arrayData);print_r(json_encode($response));break;
                     case "examenesAdd":$response=examenesAdd($arrayData);print_r(json_encode($response));break;
                     case "examen_preguntasAdd":$response=examen_preguntasAdd($arrayData);print_r(json_encode($response));break;
+                    case "asignadosAdd":$response=asignadosAdd($arrayData);print_r(json_encode($response));break;
 
                     case "preguntasUpdate":$response=preguntasUpdate($arrayData);print_r(json_encode($response));break;
                     case "respuestasUpdate":$response=respuestasUpdate($arrayData);print_r(json_encode($response));break;
@@ -57,8 +59,11 @@
                     case "usersLogin":$response=usersLogin($arrayData);print_r(json_encode($response));break;
 
                     case "respuestasPreg":$response=respuestasPreg($arrayData);print_r(json_encode($response));break;
-
+                    case "respuestasExam":$response=respuestasExam($arrayData);print_r(json_encode($response));break;
                     case "examenesOne":$response=examenesOne($arrayData);print_r(json_encode($response));break;
+                    case "disPreguntas":$response=disPreguntas($arrayData);print_r(json_encode($response));break;
+                    case "avaPreguntas":$response=avaPreguntas($arrayData);print_r(json_encode($response));break;
+                    case "valAsignados":$response=valAsignados($arrayData);print_r(json_encode($response));break;
                 }
             }else{
                 switch($request){

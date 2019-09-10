@@ -60,3 +60,41 @@ CREATE TABLE Ficha(
 	fk_use_id INT NOT NULL,
 	FOREIGN KEY (fk_use_id) REFERENCES Users(use_id)
 );
+
+CREATE TABLE Examen(
+	exa_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	exa_nombre VARCHAR(200),
+	exa_fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	exa_status TINYINT DEFAULT 1,
+	fk_adm_id INT NOT NULL,
+	FOREIGN KEY(fk_adm_id) REFERENCES Administradores(adm_id)
+);
+
+CREATE TABLE Examen_Preguntas(
+	ep_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	ep_fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	fk_exa_id INT NOT NULL,
+	fk_pre_id INT NOT NULL,
+	FOREIGN KEY(fk_exa_id) REFERENCES Examen(exa_id),
+	FOREIGN KEY(fk_pre_id) REFERENCES Preguntas(pre_id)
+);
+
+CREATE TABLE Resultados(
+	rdo_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	rdo_fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	rdo_calificacion VARCHAR(5),
+	fk_exa_id INT NOT NULL,
+	fk_use_id INT NOT NULL,
+	FOREIGN KEY(fk_exa_id) REFERENCES Examen(exa_id),
+	FOREIGN KEY(fk_use_id) REFERENCES Users(use_id)
+);
+
+CREATE TABLE Asignados(
+	asi_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	asi_fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	asi_status TINYINT DEFAULT 1,
+	fk_use_id INT NOT NULL,
+	fk_exa_id INT NOT NULL,
+	FOREIGN KEY(fk_use_id) REFERENCES Users(use_id),
+	FOREIGN KEY(fk_exa_id) REFERENCES Examen(exa_id)
+);

@@ -8,7 +8,7 @@
     }
 
     function examenesOne($array){
-        if(count($array)>0 && $array['exa_id']!=""){
+        if(count($array)>0 && $array[0]['exa_id']>0){
             $exa_id=$array[0]['exa_id'];
             $query="SELECT* FROM Examen WHERE exa_id=$exa_id";
             $response=getAll($query);
