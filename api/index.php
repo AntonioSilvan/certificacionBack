@@ -7,6 +7,7 @@
     include_once 'examenes.php';
     include_once 'examen_preguntas.php';
     include_once 'asignados.php';
+    include_once 'resultados.php';
 
 
     if(isset($_GET['url'])){
@@ -65,6 +66,7 @@
                     case "disPreguntas":$response=disPreguntas($arrayData);print_r(json_encode($response));break;
                     case "avaPreguntas":$response=avaPreguntas($arrayData);print_r(json_encode($response));break;
                     case "valAsignados":$response=valAsignados($arrayData);print_r(json_encode($response));break;
+                    case "resultado":$response=resultado($arrayData);print_r(json_encode($response));break;
                 }
             }else{
                 switch($request){
