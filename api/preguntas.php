@@ -9,7 +9,7 @@
     }
 
     function preguntasAdd($array){
-        if(count($array>0) && $array[0]['pre_contenido']!=""){
+        if(count($array)>0 && $array[0]['pre_contenido']!=""){
             $array=$array[0];
             $pre_contenido=$array['pre_contenido'];
             $fk_adm_id=$array['fk_adm_id'];
@@ -22,7 +22,7 @@
     }
 
     function preguntasUpdate($array){
-        if(count($array>0) && $array[0]['pre_contenido']!="" &&$array[0]['pre_id']>0){
+        if(count($array)>0 && $array[0]['pre_contenido']!="" &&$array[0]['pre_id']>0){
             $array=$array[0];
             $pre_id=$array['pre_id'];
             $pre_contenido=$array['pre_contenido'];

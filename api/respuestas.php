@@ -52,7 +52,7 @@
             $array=$array[0];
             $fk_pre_id=$array['fk_pre_id'];
             $fk_adm_id=$array['fk_adm_id'];
-            $query="SELECT* FROM respuestas WHERE fk_pre_id=$fk_pre_id AND fk_adm_id=$fk_adm_id";
+            $query="SELECT* FROM Respuestas WHERE fk_pre_id=$fk_pre_id AND fk_adm_id=$fk_adm_id";
             $response=getAll($query);
         }else{
             $response=NoQuery();
@@ -64,7 +64,7 @@
         if(count($array)>0 && $array[0]['fk_pre_id']>0){
             $array=$array[0];
             $fk_pre_id=$array['fk_pre_id'];
-            $query="SELECT* FROM respuestas WHERE fk_pre_id=$fk_pre_id";
+            $query="SELECT* FROM Respuestas WHERE fk_pre_id=$fk_pre_id";
             $response=getAll($query);
         }else{
             $response=NoQuery();
