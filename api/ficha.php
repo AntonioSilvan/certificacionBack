@@ -8,11 +8,12 @@
     }
 
     function fichasAdd($fk_use_id, $img_ficha){
+        $host = $_SERVER['SERVER_NAME'];
         //Formamos la ruta para subir la ficha
         $uploadRuta=$_SERVER['DOCUMENT_ROOT']."/certificacionBack/ficha/$fk_use_id/";
 
         //Formamos la ruta para ver archivos
-        $viewRuta="http://localhost/certificacionBack/ficha/$fk_use_id/";
+        $viewRuta="http://$host/certificacionBack/ficha/$fk_use_id/";
 
         //Obtenemos la extencion de archivo para mandatlo como parametro
         $img_name=$img_ficha['name'];
